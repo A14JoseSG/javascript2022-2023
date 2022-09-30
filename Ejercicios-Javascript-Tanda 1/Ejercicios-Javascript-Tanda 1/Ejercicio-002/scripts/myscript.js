@@ -12,4 +12,4 @@
 *
 ***************************************************************************************************************/
 let nombre = prompt("Nombre: ");
-document.write(`Bienvenido: ${nombre}`);
+console.log(`Bienvenido: ${nombre}`);
