@@ -11,3 +11,9 @@
 *
 *
 ***************************************************************************************************************/
+
+////do {
+     let nombre = prompt("Introduce tu nombre");
+//} while (typeof nombre != "string");
+
+alert(`Bienvenido: ${nombre}`);
