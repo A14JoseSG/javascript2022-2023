@@ -16,3 +16,17 @@
 *   Notas: Emplear una funcion con un parámetro
 *
 ***************************************************************************************************************/
+function farenheitToCelsius(temperatura) {
+    let celsius = (5/9) * (temperatura-32);
+    return celsius;
+}
+
+let temperatura;
+
+do {
+    temperatura = parseFloat(prompt("Introduce la temperatura: "));
+   
+} while (isNaN(temperatura));
+
+console.log(`La tempratura en celsius es: ${farenheitToCelsius(temperatura).toFixed(2)}`);
+
