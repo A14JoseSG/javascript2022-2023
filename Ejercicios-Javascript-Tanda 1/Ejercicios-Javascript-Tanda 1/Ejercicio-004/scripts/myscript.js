@@ -12,3 +12,19 @@
 *
 *
 ***************************************************************************************************************/
+let nombre;
+let edad;
+let validacion;
+
+do {
+    nombre = prompt("Introduce tu nombre: ")
+    validacion = parseInt(nombre);
+
+} while (!isNaN(validacion));
+
+do {
+    edad = parseFloat(prompt("Introduce la edad: "));
+} while (isNaN(edad) || !Number.isInteger(edad));
+
+
+console.error(`Nombre: ${nombre} y tienes ${edad}`);
