@@ -17,3 +17,17 @@
 *                   - ¿Qué pasaría en la division si numero2=0 ?
 *
 ***************************************************************************************************************/
+
+let numero1 = 0;
+let numero2 = 0;
+
+do {
+    numero1 = parseInt(prompt("Introduce el primer número: "));
+    numero2 = parseInt(prompt("Introduce el segundo número: "));
+} while (isNaN(numero1 && isNaN(numero2)));
+
+console.log(`La suma de numero1 y numero2 es: ${numero1+numero2}
+La resta de numero1 y numero2 es: ${numero1-numero2}
+El producto de numero1 y numero2 es: ${numero1*numero2}
+La división de numero1 y numero2 es: ${(numero1/numero2).toFixed(2)}
+`);
