@@ -16,3 +16,21 @@
 *
 ***************************************************************************************************************/
 
+let edad;
+let edadValida = true;
+
+do {
+    edad = parseInt(prompt("Introduce tu edad: "));
+   if((edad > 120 || edad < 0)|| isNaN(edad))  alert("Edad no válida");
+    
+} while ((edad <0 || edad > 120) || isNaN(edad));
+
+if (edad <30) {
+    
+        console.log("Ponte a trabajar");
+}else if (edad < 65){
+        console.log("Qué ganas tengo de jubilarme")
+    }
+    else{
+        console.log("Descansa un poco");
+    }
