@@ -8,3 +8,14 @@
 *   Salida  : El número n es (par|impar)
 *
 ***************************************************************************************************************/
+let n;
+
+do {
+    n = parseInt(prompt("Introduce un número: "));
+} while (isNaN(n));
+
+if (n%2==0) {
+    document.write(`El número ${n} es par`);
+} else {
+    document.write(`El número ${n} es impar`);
+}
