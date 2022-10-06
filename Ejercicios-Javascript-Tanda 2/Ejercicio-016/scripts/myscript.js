@@ -17,3 +17,28 @@
 *          * Declararemos y emplearemos funciones
 *
 ***************************************************************************************************************/
+function tablaenConsola(numero) {
+    for (let i = 1; i < 10; i++) {
+        console.log(`${i} X ${numero} = ${i * numero}`);
+    }
+    
+}
+
+function tablaenHml(numero) {
+    document.write("<table>");
+    for (let i = 1; i < 10; i++) {
+        document.write(`<tr><td>${i}</td><td>X</td><td>${numero}</td><td>=</td><td>${i * numero}</td></tr>`);
+    }
+    document.write("</table>");
+}
+
+let numero;
+
+
+    do {
+        numero = parseInt(prompt("Introduce un número entre 1 y 9: "));
+    } while ((numero < 1 || numero >9) || isNaN(numero));
+    
+
+tablaenConsola(numero);
+tablaenHml(numero);
