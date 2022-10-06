@@ -10,3 +10,13 @@
 *
 *
 ***************************************************************************************************************/
+
+const persona = {
+    nombre: "Jose",
+    edad: 17,
+    mayorEdad() {
+        return (this.edad>=18)?`Es mayor de edad`:`Es menor de edad`
+    }
+}
+
+console.log(persona.mayorEdad())
