@@ -43,12 +43,14 @@ document.write(`El mayor número entre ${n1}, ${n2} y  ${n3} es ${mayor}`);*/
 
 /*******Solución usando el objeto Math *********************************************************************************/
 
-//document.write(`El mayor número entre ${n1}, ${n2} y  ${n3} es ${Math.max(n1,n2,n3)}`);
+document.write(`El mayor número entre ${n1}, ${n2} y  ${n3} es ${Math.max(n1,n2,n3)}`);
 
 /**********Solución empleando el operador ternario */
-
+/*
 mayor = mayor <= n1 ? n1 : mayor;
 mayor =  mayor <= n2 ? n2 : mayor;
 mayor = mayor <= n3 ? n3 : mayor;
 
-document.write(`El mayor número entre ${n1}, ${n2} y  ${n3} es ${mayor}`);
+document.write(`El mayor número entre ${n1}, ${n2} y  ${n3} es ${mayor}`);*/
+
+/********************************************************** */
