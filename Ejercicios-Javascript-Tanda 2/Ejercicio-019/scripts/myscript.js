@@ -12,3 +12,22 @@
 *
 *
 ***************************************************************************************************************/
+
+let cadena = "Hola. ! ¿que tal?@ # $ % & \ * ( )";
+let cadenaSalida = "";
+
+
+
+
+cadena = cadena.slice();
+for (const value of cadena) {
+    if ((value != ".") && (value != "!") && (value != "@") && (value != "#") && (value != "$") && (value != "%") && (value != "&") && (value != '*') && (value != "(") && (value != ")") && (value != "\\")){
+      
+        cadenaSalida = cadenaSalida.concat(value);
+    }
+
+        
+}
+
+
+console.log(cadenaSalida);
