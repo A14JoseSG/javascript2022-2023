@@ -1,20 +1,37 @@
 /***************************************************************************************************************
-*  
-*   Objetivo: Pedimos reiteradamente cadenas al usuario hasta que la cadena de texto introducida es "cancelar". 
-*
-*
-*   Entrada : cadenas de texto
-*
-*
-*   Salida  : Cada cadena introducida se muestra en un párrafo del documento HTML
-*
-*
-***************************************************************************************************************/
+ *
+ *   Objetivo: Pedimos reiteradamente cadenas al usuario hasta que la cadena de texto introducida es "cancelar".
+ *
+ *
+ *   Entrada : cadenas de texto
+ *
+ *
+ *   Salida  : Cada cadena introducida se muestra en un párrafo del documento HTML
+ *
+ *
+ ***************************************************************************************************************/
+
+function pedirDato(msg, tipo) {
+  let centinela;
+  let dato;
+  do {
+    dato = prompt(msg);
+    if (tipo == "cadena") centinela = isNaN(dato) ? true : false;
+    if (tipo == "entero")
+      centinela =
+        !isNaN(dato) && Number.isInteger(parseFloat(dato)) ? true : false;
+    if (tipo == "flotante")
+      centinela =
+        !isNaN(dato) && !Number.isInteger(parseFloat(dato)) ? true : false;
+    if (tipo == "numero") centinela = !isNaN(dato) ? true : false;
+  } while (!centinela);
+  return dato;
+}
 
 let cadena;
-
+let salida = "";
 do {
-    cadena = prompt("Introduce una cadena de texto: ");
-    document.write(`<p>${cadena}</p>`);
-    
+  cadena = pedirDato("Introduce una cadena de texto: ", "cadena");
+  salida += cadena != "cancelar" ? `<p>${cadena}</p>` : "";
 } while (cadena != "cancelar");
+document.write(salida);

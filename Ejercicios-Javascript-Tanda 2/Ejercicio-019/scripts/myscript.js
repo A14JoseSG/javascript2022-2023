@@ -1,33 +1,20 @@
 /***************************************************************************************************************
-*  
-*   Objetivo: Eliminar caracteres expeciales de una cadena. Se permiten 
-*             guion, subrayado y espacios
-*
-*
-*
-*   Entrada : cadena
-*
-*
-*   Salida  : cadena sin . ! @ # $ % & \ * ( )
-*
-*
-***************************************************************************************************************/
+ *
+ *   Objetivo: Eliminar caracteres expeciales de una cadena. Se permiten
+ *             guion, subrayado y espacios
+ *
+ *
+ *
+ *   Entrada : cadena
+ *
+ *
+ *   Salida  : cadena sin . ! @ # $ % & \ * ( )
+ *
+ *
+ ***************************************************************************************************************/
 
-let cadena = "Hola. ! ¿que tal?@ # $ % & \ * ( )";
-let cadenaSalida = "";
+let cadena = "Hola. ! ¿que tal?@ # $ % &  * ( )";
+let caracteres = ".!@#$%&*()";
 
-
-
-
-cadena = cadena.slice();
-for (const value of cadena) {
-    if ((value != ".") && (value != "!") && (value != "@") && (value != "#") && (value != "$") && (value != "%") && (value != "&") && (value != '*') && (value != "(") && (value != ")") && (value != "\\")){
-      
-        cadenaSalida = cadenaSalida.concat(value);
-    }
-
-        
-}
-
-
-console.log(cadenaSalida);
+caracteres.split("").forEach((el) => (cadena = cadena.replaceAll(el, "")));
+console.log(cadena);
