@@ -15,4 +15,12 @@
 *   Salida  : El problema 100 está en el volumen 1
 *             El problema 306 está en el volumen 3
 *
-***************************************************************************************************************
+***************************************************************************************************************/
+
+let problema;
+
+do {
+    problema = parseInt(prompt("Introduce el numero del problema"));
+} while (isNaN(problema) || problema < 100);
+
+console.log(`El problema ${problema} está en el volumen ${problema.toString().charAt(0)}`)
