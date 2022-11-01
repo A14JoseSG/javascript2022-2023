@@ -11,3 +11,17 @@
 *   Notas: Métodos del objeto String
 *
 ***************************************************************************************************************/
+ let texto;
+ let palabra;
+
+ do {
+    texto = prompt("Introduce un texto");
+    palabra = prompt("Introduce una palabra");
+ } while (texto == "" || palabra == "");
+
+ texto = texto.split(" ");
+
+const coincidencias = texto.filter(el=>palabra == el)
+
+
+console.log(coincidencias.length);
