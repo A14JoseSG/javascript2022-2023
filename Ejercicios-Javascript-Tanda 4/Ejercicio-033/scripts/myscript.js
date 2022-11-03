@@ -45,7 +45,7 @@ for (let i = 0; i < cadena.length; i++) {
 /*******************Hecho con strings ***********************************************************/
 
 for (let i = 0; i < Math.trunc(cadena2.length/2); i++) {
-  if (cadena2.charAt(i) != cadena2.charAt(cadena.length-1-i)) {
+  if (cadena2.charAt(i) != cadena2.charAt(cadena2.length-1-i)) {
     palindromo = false
   }
   (palindromo) ? console.log(`La cadena es un palíndromo`) : console.log(`La cadena no es un palíndromo`);
