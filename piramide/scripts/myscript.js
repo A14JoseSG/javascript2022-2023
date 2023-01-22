@@ -13,7 +13,7 @@ function getDato(msg, tipo){
 }
 
 let fichas;
-let altura;
+
 let cuspide = 1;
 let fichasUsadas = 0;
 let exito = false;
