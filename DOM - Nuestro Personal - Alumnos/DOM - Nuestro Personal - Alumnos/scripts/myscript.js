@@ -45,47 +45,64 @@ const $contenedor = document.querySelector("section"),
       $text = document.querySelector("#info"),
       $botonPrev = document.querySelector(".prev-btn"),
       $botonNext = document.querySelector(".next-btn"),
-      $foto = document.querySelector(".img-contenedor");
+      $foto = document.querySelector(".img-contenedor"),
+      $random = document.querySelector(".random-btn");
 
+let personaInicial  = {                                         // Recogemos los datos que están en el html para añadirlos al objeto
+  id : 0,
+  nombre: $nombre.textContent,
+  trabajo: $trabajo.textContent,
+  foto: $foto.firstElementChild.getAttribute("src"),
+  text: $text.textContent
+}
+personal.splice(0,0,personaInicial);
+
+aleatorio = (min,max) => Math.floor(min+(max-min)*Math.random());
 posicion = 0;
-const cambiarEmpleado = (direccion) =>{
-  let $fragmento = document.createDocumentFragment();
 
-  
-  if(direccion == "prev"){
+// Pinta el empleado. Recibe el sentido del botón pulsado para elegir el anterior o posterior.
+const cambiarEmpleado = (boton) =>{
+ 
+  if(boton == $botonPrev){
+    posicion--;
     if (posicion == -1) posicion = personal.length-1;
     
     $nombre.textContent =personal[posicion].nombre;
     $trabajo.textContent = personal[posicion].trabajo;
     $foto.firstElementChild.setAttribute("src",personal[posicion].foto);
     $text.textContent = personal[posicion].text;  
-    posicion--;
-    
-  }else{
+  }else if(boton == $botonNext){
+    posicion++;
     if (posicion == personal.length) posicion = 0;
-    
+    $nombre.textContent =personal[posicion].nombre;
+    $trabajo.textContent = personal[posicion].trabajo;
+    $foto.firstElementChild.setAttribute("src",personal[posicion].foto);
+    $text.textContent = personal[posicion].text; 
+  }else{
+    do{
+      $aleatorio = aleatorio(0,personal.length);
+    }while($aleatorio == posicion);
+    posicion = $aleatorio;
     $nombre.textContent =personal[posicion].nombre;
     $trabajo.textContent = personal[posicion].trabajo;
     $foto.firstElementChild.setAttribute("src",personal[posicion].foto);
     $text.textContent = personal[posicion].text;
-    posicion++;
-    
-  }
-
-  $fragmento.appendChild($foto);
-  $fragmento.appendChild($nombre);
-  $fragmento.appendChild($trabajo);
-  $fragmento.appendChild($text);
-
-  $empleado.removeChild
-  $empleado.appendChild($fragmento);
-  
+  }         
+  $empleado.replaceChild($foto, $empleado.querySelector(".img-contenedor"));
+  $empleado.replaceChild($nombre,$empleado.querySelector("#nombre"));
+  $empleado.replaceChild($trabajo,$empleado.querySelector("#trabajo"));
+  $empleado.replaceChild($text,$empleado.querySelector("#info"));
 }
 $botonPrev.addEventListener("click",event=>{
   event.preventDefault;
-  cambiarEmpleado("prev");
+  cambiarEmpleado(event.currentTarget);
 })
 $botonNext.addEventListener("click",event=>{
   event.preventDefault;
-  cambiarEmpleado("next");
+  cambiarEmpleado(event.currentTarget);
 })
+$random.addEventListener("click",event=>{
+  event.preventDefault;
+  cambiarEmpleado(event.currentTarget)
+})
+
