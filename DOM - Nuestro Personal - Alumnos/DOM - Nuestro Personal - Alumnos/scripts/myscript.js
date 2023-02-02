@@ -105,4 +105,3 @@ $random.addEventListener("click",event=>{
   event.preventDefault;
   cambiarEmpleado(event.currentTarget)
 })
-
