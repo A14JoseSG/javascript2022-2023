@@ -51,3 +51,30 @@ const opiniones = [
       "Este chico es un joven y talentoso profesional de TI, proactivo y responsable, con una fuerte ética de trabajo. Es muy fuerte en conversiones PSD2HTML y tecnología HTML/CSS. Aprende rápido, con ganas de aprender nuevas tecnologías. Es centrado y tiene la buena dinámica para lograr fechas de vencimiento y resultados sobresalientes.",
   },
 ];
+
+const $contenedor = document.querySelector(".contenedor"),
+      $opinion = document.querySelector(".opinion"),
+      $img = document.querySelector("img"),
+      $usuarioNombre = document.querySelector(".usuario-nombre"),
+      $usuarioTrabajo = document.querySelector(".usuario-trabajo"),
+      $barraProgreso = document.querySelector(".barra-de-progreso");
+
+posicion = 0;
+
+const renderOpinion = () =>{
+  if (posicion == opiniones.length) 
+     posicion = 0;
+
+  $opinion.textContent = opiniones[posicion].texto;
+  $img.setAttribute("src", opiniones[posicion].imagen);
+  $usuarioNombre.textContent = opiniones[posicion].nombre;
+  $usuarioTrabajo.textContent = opiniones[posicion].trabajo;
+  posicion++;
+}
+
+const tiempo = () =>{
+  setInterval(renderOpinion,10000);
+}
+
+
+$barraProgreso.addEventListener("animationstart",tiempo);
